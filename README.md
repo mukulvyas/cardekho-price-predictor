@@ -33,7 +33,7 @@ To develop a predictive model that can estimate the price of a used car and assi
 - Removed duplicates and handled missing values
 - Converted text columns to numerical values using encoding
 - Feature scaling and selection
-- Train-Test split for model training and evaluation
+- Train-test split for model training and evaluation
 
 ---
 
@@ -51,17 +51,24 @@ To develop a predictive model that can estimate the price of a used car and assi
 - Ridge & Lasso Regression
 - K-Nearest Neighbors
 - Decision Tree
-- **Random Forest (with and without hyperparameter tuning)**
+- Random Forest
+- AdaBoost
+- Gradient Boosting
+- XGBoost
 
 ---
 
-## 🏁 Final Results (Best Model: Random Forest Regressor)
+## 🏁 Final Results
 
-- **R² Score on Test Set**: **94.54%**
-- **Mean Absolute Error (MAE)**: ₹98,123
-- **Root Mean Squared Error (RMSE)**: ₹202,735
+| Model               | R² Score | MAE     | RMSE     |
+|---------------------|----------|---------|----------|
+| Random Forest       | 94.36%   | ₹99,135 | ₹206,047 |
+| K-Nearest Neighbors | 90.75%   | ₹117,496| ₹263,888 |
+| AdaBoost            | 65.14%   | ₹401,950| ₹512,298 |
+| Gradient Boosting   | 93.94%   | ₹97,966 | ₹213,579 |
+| XGBoost             | 85.50%   | ₹103,494| ₹330,411 |
 
-This model performed best among all evaluated regressors and showed strong generalization after hyperparameter tuning.
+**Best Model: Random Forest**, showing strong overall generalization with a high R² score and low error.
 
 ---
 
@@ -71,6 +78,7 @@ This model performed best among all evaluated regressors and showed strong gener
 - Pandas, NumPy
 - Scikit-Learn
 - Seaborn, Matplotlib
+- XGBoost
 
 ---
 
@@ -78,7 +86,17 @@ This model performed best among all evaluated regressors and showed strong gener
 
 ```bash
 📦cardekho-price-predictor
- ┣ 📜cardekho_imputated.csv
  ┣ 📜cardekho_price_predictor.ipynb
  ┣ 📜README.md
+ ┗ 📜cardekho_imputated.csv
+```
 
+---
+
+## 💡 Future Improvements
+
+- Deploy as a web app using Streamlit/Flask
+- Integrate live car listings from Cardekho
+- Automate feature engineering and tuning pipeline
+
+---
